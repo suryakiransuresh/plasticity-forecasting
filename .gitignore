@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Experiment outputs / large model artifacts
+results/
+*.pt
+*.pth
+*.bin
+*.safetensors
+
+# Secrets
+.env
