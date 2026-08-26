@@ -12,3 +12,6 @@ results/
 
 # Secrets
 .env
+
+# Third-party benchmark checkout
+data/external_validation/RippleEdits/
