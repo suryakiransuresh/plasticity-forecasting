@@ -1,0 +1,35 @@
+% Requires: \usepackage{booktabs,threeparttable}
+% Include this file immediately after the Locked E1 utility-cost paragraph.
+
+\begin{table*}[t]
+\raggedright
+\caption{\textbf{Paired Counterfactual Plasticity differences and diagnostic-oracle results on the locked E1 test set.}
+Paired differences are CP minus B1, with frozen 95\% bootstrap confidence intervals.}
+\label{tab:e1-primary-differences-oracle}
+
+\small
+\begin{threeparttable}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccc}
+\toprule
+Model & \multicolumn{2}{c}{CP $-$ B1} & Oracle \\
+\cmidrule(lr){2-3}\cmidrule(l){4-4}
+& \shortstack{$\Delta$Harm pp\\[-1pt]95\% CI}
+& \shortstack{$\Delta G$\\[-1pt]95\% CI}
+& $G$; Harm \\
+\midrule
+TinyLlama
+& \shortstack{$-16.67$\\[-1pt]$[-24.44,-8.89]$}
+& \shortstack{$-1.138440$\\[-1pt]$[-1.718621,-0.627374$]}
+& 7.287620; 3.33\% \\
+Gemma
+& \shortstack{$-14.44$\\[-1pt]$[-22.22,-7.78]$}
+& \shortstack{$-0.004103$\\[-1pt]$[-0.006212,-0.002379$]}
+& 21.315508; 0\% \\
+\bottomrule
+\end{tabular*}
+
+\begin{tablenotes}[flushleft]\footnotesize
+\item \textit{Oracle.} The diagnostic oracle selects the highest-gain realized-safe candidate when one exists; otherwise it selects the minimum-damage candidate. It never abstains. Thus, the TinyLlama oracle has three harmful outcomes because no safe candidate existed for those edits.
+\end{tablenotes}
+\end{threeparttable}
+\end{table*}
